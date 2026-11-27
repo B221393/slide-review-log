@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "slide-review-log"
+version = "0.1.0"
+description = "Carry dated slide feedback across deck revisions"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+slide-review-log = "slide_review_log.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/slide_review_log"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
